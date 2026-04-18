@@ -567,9 +567,3 @@
       padding: 14px;
     }
   }
-
-.market-note {
-  margin-top: -8px;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
