@@ -20,25 +20,6 @@ Projeto pessoal criado para praticar integração com APIs em tempo real, JavaSc
 - Alpha Vantage para dados de mercado
 - Chart.js
 
-## Observações sobre a área da bolsa
-
-A seção da bolsa foi ajustada para reduzir o número de requisições feitas à Alpha Vantage. Isso melhora a estabilidade da versão gratuita da API, que possui limite de uso diário e por minuto. A aplicação agora também usa cache local temporário para evitar chamadas repetidas e exibir os dados com mais consistência. A Frankfurter continua sendo usada para as cotações cambiais.
-
-## Como configurar a chave da Alpha Vantage
-
-1. Abra o arquivo `config.example.js`
-2. Copie o conteúdo para um novo arquivo chamado `config.js`
-3. Substitua `COLOQUE_SUA_CHAVE_AQUI` pela sua chave
-
-Exemplo:
-
-```js
-window.APP_CONFIG = {
-  ALPHA_VANTAGE_KEY: "SUA_CHAVE_AQUI",
-  DEMO_MODE: false
-};
-```
-
 ## Como rodar localmente
 
 Como o projeto é estático, você pode abrir o `index.html` no navegador. Para evitar bloqueios de segurança em alguns navegadores, o ideal é usar um servidor local simples.
