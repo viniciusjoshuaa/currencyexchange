@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polanski's Converter</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="config.js"></script>
+</head>
+<body>
+  <div class="coin-burst-layer" id="coinBurstLayer"></div>
+
+  <header class="hero">
+    <h1>Polanski's Converter</h1>
+    <p>Site criado com utilizando API's em tempo real.</p>
+  </header>
+
+  <main class="page">
+    <section class="app-shell">
+      <section class="converter-card compact-card">
+        <div class="converter-header">
+          <div class="brand-badge">
+            <span class="badge-coin">¤</span>
+            <span>Currency Exchange</span>
+          </div>
+
+          <div class="live-dot-wrap">
+            <span class="live-dot"></span>
+            <span>Conversão em tempo real</span>
+          </div>
+        </div>
+
+        <div class="converter-body">
+          <div class="input-group">
+            <label for="amount">Valor</label>
+            <div class="input-icon-wrap">
+              <input type="number" id="amount" placeholder="Digite o valor" min="0" step="0.01" />
+            </div>
+          </div>
+
+          <div class="currencies-row compact-row">
+            <div class="input-group">
+              <label for="fromCurrency">De</label>
+              <select id="fromCurrency"></select>
+            </div>
+
+            <button class="swap-btn compact-swap" id="swapBtn" title="Inverter moedas" aria-label="Inverter moedas">
+              ⇄
+            </button>
+
+            <div class="input-group">
+              <label for="toCurrency">Para</label>
+              <select id="toCurrency"></select>
+            </div>
+          </div>
+
+          <button class="convert-btn compact-convert" id="convertBtn">Converter agora</button>
+
+          <div class="result-card compact-result">
+            <div class="result-main" id="result">O resultado aparecerá aqui</div>
+            <div class="result-sub" id="rateInfo">Carregando lista de moedas...</div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="dashboard">
+      <div class="section-head">
+        <h2>Histórico cambial</h2>
+        <p>Últimos 30 dias da cotação entre as moedas escolhidas</p>
+      </div>
+
+      <div class="chart-card" id="fx-section">
+        <canvas id="fxChart"></canvas>
+      </div>
+
+      <div class="section-head" id="market-section">
+        <h2>Bolsas do mundo</h2>
+        <p>Resumo dos principais índices globais</p>
+      </div>
+
+      <div class="market-grid" id="marketGrid">
+        <div class="loading-card">Carregando índices...</div>
+      </div>
+
+      <div class="section-head" id="market-chart-head">
+        <h2>Gráfico dos índices</h2>
+        <p>Comparativo atual dos principais índices carregados</p>
+      </div>
+
+      <div class="chart-card large-chart" id="market-chart-section">
+        <canvas id="marketChart"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

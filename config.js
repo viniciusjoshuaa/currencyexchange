@@ -1,0 +1,4 @@
+window.APP_CONFIG = {
+  ALPHA_VANTAGE_KEY: "COLOQUE_SUA_CHAVE_AQUI",
+  DEMO_MODE: false
+};
