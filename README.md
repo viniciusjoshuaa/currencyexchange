@@ -1,6 +1,6 @@
 # Polanski's Converter
 
-Projeto pessoal criado para praticar integração com APIs em tempo real, JavaScript, HTML e CSS, além de explorar criação visual com JavaScript por meio da animação das moedas exibidas na tela.
+Projeto pessoal criado para praticar integração com APIs em tempo real, JavaScript, HTML e CSS, além de explorar criação visual por meio da animação das moedas exibidas na tela.
 
 ## O que o projeto faz
 
