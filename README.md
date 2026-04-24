@@ -99,7 +99,6 @@ polanski-coverter/
 - Cache local temporário para os dados de mercado
 - Modo de demonstração para testes e apresentação
 - README reescrito com instruções de uso
-- Screenshots reais adicionados ao projeto
 
 ## Licença
 
