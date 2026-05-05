@@ -8,6 +8,7 @@ const rateInfo = document.getElementById("rateInfo");
 const coinBurstLayer = document.getElementById("coinBurstLayer");
 const marketGrid = document.getElementById("marketGrid");
 
+<<<<<<< HEAD
 
 const translations = {
   pt: {
@@ -160,6 +161,8 @@ function refreshMarketStaticText() {
   }
 }
 
+=======
+>>>>>>> 742714022b02f240614ad0829e7d6d89191529d3
 const ALPHA_VANTAGE_KEY = "C8VIEAL7LAHPRWYZ";
 
 let fxChartInstance = null;
@@ -170,10 +173,17 @@ const marketIndexes = [
   { name: "S&P 500", symbol: "SPY" },
   { name: "NASDAQ 100", symbol: "QQQ" },
   { name: "Dow Jones", symbol: "DIA" },
+<<<<<<< HEAD
   { name: "Nikkei Japan", symbol: "EWJ" },
   { name: "FTSE United Kingdom", symbol: "EWU" },
   { name: "DAX Germany", symbol: "EWG" },
   { name: "Brazil", symbol: "EWZ" },
+=======
+  { name: "Nikkei Japão", symbol: "EWJ" },
+  { name: "FTSE Reino Unido", symbol: "EWU" },
+  { name: "DAX Alemanha", symbol: "EWG" },
+  { name: "Brasil", symbol: "EWZ" },
+>>>>>>> 742714022b02f240614ad0829e7d6d89191529d3
   { name: "China", symbol: "MCHI" }
 ];
 
@@ -228,7 +238,11 @@ const preferredOrder = [
 
 function getCurrencyLabel(code, name) {
   const flag = currencyFlags[code] ? `${currencyFlags[code]} ` : "";
+<<<<<<< HEAD
   return `${flag}${code} - ${nestedT("fallbackCurrencies", code) !== code ? nestedT("fallbackCurrencies", code) : name}`;
+=======
+  return `${flag}${code} - ${name}`;
+>>>>>>> 742714022b02f240614ad0829e7d6d89191529d3
 }
 
 async function loadCurrencies() {
@@ -236,7 +250,11 @@ async function loadCurrencies() {
     const response = await fetch("https://api.frankfurter.dev/v1/currencies");
 
     if (!response.ok) {
+<<<<<<< HEAD
       throw new Error(t("currencyLoadError"));
+=======
+      throw new Error("Falha ao carregar a lista de moedas.");
+>>>>>>> 742714022b02f240614ad0829e7d6d89191529d3
     }
 
     const currencies = await response.json();
@@ -272,7 +290,11 @@ async function loadCurrencies() {
   } catch (error) {
     console.error(error);
 
+<<<<<<< HEAD
     rateInfo.textContent = t("currencyLoadError");
+=======
+    rateInfo.textContent = "Não foi possível carregar a lista completa de moedas.";
+>>>>>>> 742714022b02f240614ad0829e7d6d89191529d3
 
     fromCurrency.innerHTML = `
       <option value="BRL">${getCurrencyLabel("BRL", "Brazilian Real")}</option>
@@ -350,7 +372,11 @@ async function convertCurrency() {
     return;
   }
 
+<<<<<<< HEAD
   result.textContent = t("converting");
+=======
+  result.textContent = "Convertendo...";
+>>>>>>> 742714022b02f240614ad0829e7d6d89191529d3
   result.className = "result-main";
   rateInfo.textContent = t("fetchingRate");
 
@@ -359,7 +385,11 @@ async function convertCurrency() {
     const response = await fetch(url);
 
     if (!response.ok) {
+<<<<<<< HEAD
       throw new Error(t("conversionError"));
+=======
+      throw new Error("Falha ao consultar a API de câmbio.");
+>>>>>>> 742714022b02f240614ad0829e7d6d89191529d3
     }
 
     const data = await response.json();
@@ -400,7 +430,11 @@ async function loadFxHistory(from, to) {
     const response = await fetch(url);
 
     if (!response.ok) {
+<<<<<<< HEAD
       throw new Error(t("conversionError"));
+=======
+      throw new Error("Erro ao buscar histórico cambial.");
+>>>>>>> 742714022b02f240614ad0829e7d6d89191529d3
     }
 
     const data = await response.json();
@@ -427,7 +461,11 @@ function renderFxChart(labels, values, pairLabel) {
       labels,
       datasets: [
         {
+<<<<<<< HEAD
           label: `${t("chartHistory")} ${pairLabel}`,
+=======
+          label: `Histórico ${pairLabel}`,
+>>>>>>> 742714022b02f240614ad0829e7d6d89191529d3
           data: values,
           borderColor: "#d4af37",
           backgroundColor: "rgba(212, 175, 55, 0.16)",
@@ -466,7 +504,11 @@ async function loadMarketData() {
   if (!ALPHA_VANTAGE_KEY || ALPHA_VANTAGE_KEY === "COLOQUE_SUA_CHAVE_AQUI") {
     marketGrid.innerHTML = `
       <div class="loading-card" style="grid-column: 1 / -1;">
+<<<<<<< HEAD
         ${t("addApiKey")} <strong>ALPHA_VANTAGE_KEY</strong> ${t("unlockMarketData")}
+=======
+        Adicione sua chave da Alpha Vantage em <strong>ALPHA_VANTAGE_KEY</strong> para liberar os dados das bolsas.
+>>>>>>> 742714022b02f240614ad0829e7d6d89191529d3
       </div>
     `;
     renderEmptyMarketChart();
@@ -489,10 +531,17 @@ async function loadMarketData() {
       if (!quote || !quote["05. price"]) {
         cardsHtml.push(`
           <div class="market-card">
+<<<<<<< HEAD
             <div class="market-name">${nestedT("marketNames", item.name)}</div>
             <div class="market-symbol">${item.symbol}</div>
             <div class="market-price">${t("unavailable")}</div>
             <div class="market-change market-negative">${t("noApiResponse")}</div>
+=======
+            <div class="market-name">${item.name}</div>
+            <div class="market-symbol">${item.symbol}</div>
+            <div class="market-price">Indisponível</div>
+            <div class="market-change market-negative">Sem resposta da API</div>
+>>>>>>> 742714022b02f240614ad0829e7d6d89191529d3
           </div>
         `);
         continue;
@@ -505,7 +554,11 @@ async function loadMarketData() {
 
       cardsHtml.push(`
         <div class="market-card">
+<<<<<<< HEAD
           <div class="market-name">${nestedT("marketNames", item.name)}</div>
+=======
+          <div class="market-name">${item.name}</div>
+>>>>>>> 742714022b02f240614ad0829e7d6d89191529d3
           <div class="market-symbol">${item.symbol}</div>
           <div class="market-price">${price.toFixed(2)}</div>
           <div class="market-change ${positive ? "market-positive" : "market-negative"}">
@@ -528,13 +581,18 @@ async function loadMarketData() {
         }
 
         datasets.push({
+<<<<<<< HEAD
           label: nestedT("marketNames", item.name),
+=======
+          label: item.name,
+>>>>>>> 742714022b02f240614ad0829e7d6d89191529d3
           data: closes,
           borderWidth: 2,
           tension: 0.25
         });
       }
     } catch (error) {
+<<<<<<< HEAD
       console.error(`${t("error")} ${item.symbol}:`, error);
       cardsHtml.push(`
         <div class="market-card">
@@ -542,6 +600,15 @@ async function loadMarketData() {
           <div class="market-symbol">${item.symbol}</div>
           <div class="market-price">${t("error")}</div>
           <div class="market-change market-negative">${t("loadFailed")}</div>
+=======
+      console.error(`Erro ao carregar ${item.symbol}:`, error);
+      cardsHtml.push(`
+        <div class="market-card">
+          <div class="market-name">${item.name}</div>
+          <div class="market-symbol">${item.symbol}</div>
+          <div class="market-price">Erro</div>
+          <div class="market-change market-negative">Falha ao carregar</div>
+>>>>>>> 742714022b02f240614ad0829e7d6d89191529d3
         </div>
       `);
     }
@@ -606,7 +673,11 @@ function renderEmptyMarketChart() {
       labels: ["1", "2", "3", "4"],
       datasets: [
         {
+<<<<<<< HEAD
           label: t("waitingMarketData"),
+=======
+          label: "Aguardando dados de mercado",
+>>>>>>> 742714022b02f240614ad0829e7d6d89191529d3
           data: [0, 0, 0, 0],
           borderColor: "#666",
           backgroundColor: "rgba(255,255,255,0.06)",
@@ -720,9 +791,15 @@ function startCoinLoop() {
   }, 3200);
 }
 
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", () => {
   applyLanguage(currentLanguage);
   loadCurrencies();
   loadMarketData();
   startCoinLoop();
 });
+=======
+loadCurrencies();
+loadMarketData();
+startCoinLoop();
+>>>>>>> 742714022b02f240614ad0829e7d6d89191529d3
