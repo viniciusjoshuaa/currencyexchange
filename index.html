@@ -10,9 +10,20 @@
 <body>
   <div class="coin-burst-layer" id="coinBurstLayer"></div>
 
+  <nav class="language-switcher" aria-label="Language selector">
+    <button type="button" onclick="setLanguage('pt')" title="Português do Brasil">PT-BR</button>
+    <button type="button" onclick="setLanguage('en')" title="British English">EN</button>
+    <button type="button" onclick="setLanguage('es')" title="Español">ES</button>
+    <button type="button" onclick="setLanguage('it')" title="Italiano">IT</button>
+    <button type="button" onclick="setLanguage('hi')" title="हिन्दी">हिन्दी</button>
+    <button type="button" onclick="setLanguage('ru')" title="Русский">Русский</button>
+    <button type="button" onclick="setLanguage('ja')" title="日本語">日本語</button>
+    <button type="button" onclick="setLanguage('zh')" title="中文">中文</button>
+  </nav>
+
   <header class="hero">
-    <h1>Polanski's Converter</h1>
-    <p>Código construído com aplicação de API's em tempo real.</p>
+    <h1 data-i18n="appTitle">Polanski's Converter</h1>
+    <p data-i18n="heroSubtitle">Código construído com aplicação de APIs em tempo real.</p>
   </header>
 
   <main class="page">
@@ -21,44 +32,44 @@
         <div class="converter-header">
           <div class="brand-badge">
             <span class="badge-coin">¤</span>
-            <span>Currency Exchange</span>
+            <span data-i18n="brandBadge">Currency Exchange</span>
           </div>
 
           <div class="live-dot-wrap">
             <span class="live-dot"></span>
-            <span>Conversão em tempo real</span>
+            <span data-i18n="liveConversion">Conversão em tempo real</span>
           </div>
         </div>
 
         <div class="converter-body">
           <div class="input-group">
-            <label for="amount">Valor</label>
+            <label for="amount" data-i18n="amountLabel">Valor</label>
             <div class="input-icon-wrap">
-              <input type="number" id="amount" placeholder="Digite o valor" min="0" step="0.01" />
+              <input type="number" id="amount" data-i18n-placeholder="amountPlaceholder" placeholder="Digite o valor" min="0" step="0.01" />
             </div>
           </div>
 
           <div class="currencies-row compact-row">
             <div class="input-group">
-              <label for="fromCurrency">De</label>
+              <label for="fromCurrency" data-i18n="fromLabel">De</label>
               <select id="fromCurrency"></select>
             </div>
 
-            <button class="swap-btn compact-swap" id="swapBtn" title="Inverter moedas" aria-label="Inverter moedas">
+            <button class="swap-btn compact-swap" id="swapBtn" data-i18n-title="swapTitle" data-i18n-aria="swapTitle" title="Inverter moedas" aria-label="Inverter moedas">
               ⇄
             </button>
 
             <div class="input-group">
-              <label for="toCurrency">Para</label>
+              <label for="toCurrency" data-i18n="toLabel">Para</label>
               <select id="toCurrency"></select>
             </div>
           </div>
 
-          <button class="convert-btn compact-convert" id="convertBtn">Converter agora</button>
+          <button class="convert-btn compact-convert" id="convertBtn" data-i18n="convertButton">Converter agora</button>
 
           <div class="result-card compact-result">
-            <div class="result-main" id="result">O resultado aparecerá aqui</div>
-            <div class="result-sub" id="rateInfo">Carregando lista de moedas...</div>
+            <div class="result-main" id="result" data-i18n="initialResult">O resultado aparecerá aqui</div>
+            <div class="result-sub" id="rateInfo" data-i18n="loadingCurrencies">Carregando lista de moedas...</div>
           </div>
         </div>
       </section>
@@ -66,8 +77,8 @@
 
     <section class="dashboard">
       <div class="section-head">
-        <h2>Histórico cambial</h2>
-        <p>Últimos 30 dias da cotação entre as moedas escolhidas</p>
+        <h2 data-i18n="fxHistoryTitle">Histórico cambial</h2>
+        <p data-i18n="fxHistorySubtitle">Últimos 30 dias da cotação entre as moedas escolhidas</p>
       </div>
 
       <div class="chart-card">
@@ -75,17 +86,17 @@
       </div>
 
       <div class="section-head">
-        <h2>Bolsas do mundo</h2>
-        <p>Resumo dos principais índices globais</p>
+        <h2 data-i18n="marketTitle">Bolsas do mundo</h2>
+        <p data-i18n="marketSubtitle">Resumo dos principais índices globais</p>
       </div>
 
       <div class="market-grid" id="marketGrid">
-        <div class="loading-card">Carregando índices...</div>
+        <div class="loading-card" data-i18n="loadingIndexes">Carregando índices...</div>
       </div>
 
       <div class="section-head">
-        <h2>Gráfico dos índices</h2>
-        <p>Fechamentos recentes dos mercados</p>
+        <h2 data-i18n="marketChartTitle">Gráfico dos índices</h2>
+        <p data-i18n="marketChartSubtitle">Fechamentos recentes dos mercados</p>
       </div>
 
       <div class="chart-card large-chart">
